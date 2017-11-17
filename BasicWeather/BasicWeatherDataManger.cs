@@ -97,31 +97,5 @@ namespace BasicWeather
             wd[13].LowTemp = 37;
             return wd;
         }
-
-        public WeatherData[] GetWeatherData_1Record_ForTests()
-        { // DateTime startDate, DateTime endDate
-            //WeatherData[] wd = InitializeArray<WeatherData>(5);
-            var wd = new WeatherData[14].Select(w => new WeatherData()).ToArray();
-
-            wd[0].City = "Denver";
-            wd[0].State = "CO";
-            wd[0].Date = new DateTime(2017, 10, 1);
-            wd[0].HighTemp = 76;
-            wd[0].LowTemp = 45;
-            return wd;
-            
-        }
-
-        // Private helper function initializes values of the array for use
-        private T[] InitializeArray<T>(int length) where T : new()
-        {
-            T[] array = new T[length];
-            for (int i = 0; i < length; ++i)
-            {
-                array[i] = new T();
-            }
-
-            return array;
-        }
     }
 }
