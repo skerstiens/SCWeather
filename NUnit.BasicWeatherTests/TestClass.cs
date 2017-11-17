@@ -12,11 +12,12 @@ namespace NUnit.BasicWeatherTests
     public class TestClass
     {
         [Test]
-        public void Test_AggregateWeatherData_With_No_Records_Passed_In()
+        public void Test_AggregateWeatherData_With_No_Records()
         {
             WeatherData[] wd = new WeatherData[0];
             WeatherService ws = new WeatherService();
             IEnumerable<CityAveragedWeatherData> cawd = ws.AggregateWeatherData(wd, new DateTime(2017, 10, 1), new DateTime(2017, 10, 31));
+            Assert.AreEqual(cawd.Any(), false);
         }
 
         public WeatherData[] GetWeatherData_1_Record_ForTest()
@@ -31,7 +32,7 @@ namespace NUnit.BasicWeatherTests
         }
 
         [Test]
-        public void Test_AggregateWeatherData_With_1_Records_Passed_In()
+        public void Test_AggregateWeatherData_With_1_Record()
         {
             BasicWeatherDataManger bwdm = new BasicWeatherDataManger();
             WeatherData[] wd = GetWeatherData_1_Record_ForTest();
@@ -80,7 +81,7 @@ namespace NUnit.BasicWeatherTests
         }
 
         [Test]
-        public void Test_AggregateWeatherData_With_5_Same_City_Records_Passed_In()
+        public void Test_AggregateWeatherData_With_5_Same_City_Records()
         {
             BasicWeatherDataManger bwdm = new BasicWeatherDataManger();
             WeatherData[] wd = GetWeatherData_5_City_Records_ForTestOfAverage();
