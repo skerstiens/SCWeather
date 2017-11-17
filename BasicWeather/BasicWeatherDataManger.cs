@@ -8,8 +8,8 @@ namespace BasicWeather
 {
     public class BasicWeatherDataManger
     {
-        public WeatherData[] GetWeatherData() { // DateTime startDate, DateTime endDate
-            //WeatherData[] wd = InitializeArray<WeatherData>(5);
+        public WeatherData[] GetWeatherData() { 
+
             var wd = new WeatherData[14].Select(w => new WeatherData()).ToArray();
 
             wd[0].City = "Denver";

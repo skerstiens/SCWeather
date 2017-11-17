@@ -90,7 +90,6 @@ namespace NUnit.BasicWeatherTests
             Assert.AreEqual(cawd.First().AverageLowTemp, 43.2);
         }
 
-
     public WeatherData[] GetWeatherData_2_Sets_of_City_Records_ForTestOfAverage()
     {
         var wd = new WeatherData[10].Select(w => new WeatherData()).ToArray();
